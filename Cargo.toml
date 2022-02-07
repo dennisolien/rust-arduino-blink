@@ -1,0 +1,20 @@
+[package]
+name = "rust-arduino-blink"
+version = "0.1.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.release]
+panic = "abort"
+
+[profile.dev]
+panic = "abort"
+
+[dependencies]
+# A panic handler is needed.  This is a crate with the most basic one.
+panic-halt = "0.2.0"
+
+[dependencies.arduino-hal]
+git = "https://github.com/Rahix/avr-hal"
+rev = "92d540c"
+features = ["arduino-uno"]
